@@ -4,5 +4,5 @@
 
 Here is a an app interface exaple:
 
-<image src="figma.png" width = "300">
+<image src="figma-home.png" width = "300">
 
