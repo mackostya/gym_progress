@@ -8,7 +8,7 @@ class BottomBar extends StatelessWidget {
     return BottomAppBar(
         color: Colors.white,
         shape: const CircularNotchedRectangle(),
-        child: Container(
+        child: SizedBox(
           height:70,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

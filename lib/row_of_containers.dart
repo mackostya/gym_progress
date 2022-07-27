@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'exercise_content.dart';
 
 class RowOfContainers extends StatelessWidget {
   final int counter;
@@ -7,16 +7,16 @@ class RowOfContainers extends StatelessWidget {
   final double widthOfContainer;
   final Color colorLeft;
   final Color colorRight;
-  final String text_left;
-  final String text_right;
+  final String textLeft;
+  final String textRight;
   const RowOfContainers({Key? key, 
     required this.counter, 
     required this.heightOfContainer, 
     required this.widthOfContainer, 
     this.colorLeft = Colors.black,
     this.colorRight = Colors.purple,
-    this.text_left = 'Benchpress',
-    this.text_right = 'Biceps'
+    this.textLeft = 'Benchpress',
+    this.textRight = 'Biceps'
     }) : super(key: key);
 
   @override
@@ -30,21 +30,54 @@ class RowOfContainers extends StatelessWidget {
           height: heightOfContainer,
           width: widthOfContainer,
           color: colorLeft,
-          child: Text(
-            '$text_left sets $counter',
-            style: const TextStyle(
-              color: Colors.white,),
-          ) 
+          child: Scaffold(
+            body: Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.black,
+                    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+                    textStyle:
+                        const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                child: Text('$textLeft \nN sets $counter',
+                        style: const TextStyle(
+                        color: Colors.white,),
+                        ),
+                onPressed: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ExerciseContent(name: textLeft)),
+                  );
+                },
+              ),
+            ),
+          ),
         ),
         Container(
           alignment: Alignment.center,
           height: heightOfContainer,
           width: widthOfContainer,
           color: colorRight,
-          child: Text(
-            '$text_right sets $counter',
-            style: const TextStyle(color: Colors.white),
-          ) 
+          child: Scaffold(
+            body: Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.black,
+                    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+                    textStyle:
+                        const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                child: Text('$textLeft \nN sets $counter',
+                        style: const TextStyle(
+                        color: Colors.white,),
+                        ),
+                onPressed: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ExerciseContent(name: textLeft)),
+                  );
+                },
+              ),
+            ),
+          ), 
         ),
         ]
     );
